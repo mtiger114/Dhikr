@@ -1,91 +1,91 @@
 body {
-  font-family: Arial, sans-serif;
-  background-image: linear-gradient(90deg,#d6ffa7,#76db03);
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  position: relative; /* To make sure pop-up is positioned relative to the body */
-  font-family: "Rakkas", serif;
-  font-weight: 400;
-  font-style: normal;
+  font-family: Arial, sans-serif; /* تعيين الخط الأساسي للنص */
+  background-image: linear-gradient(90deg,#d6ffa7,#76db03); /* تعيين خلفية متدرجة */
+  margin: 0; /* إزالة هامش الصفحة */
+  padding: 0; /* إزالة حشو الصفحة */
+  display: flex; /* تحويل العناصر إلى عرض مرن */
+  flex-direction: column; /* توجيه العناصر بشكل عمودي */
+  align-items: center; /* محاذاة العناصر بوسط الصفحة عموديًا */
+  justify-content: center; /* محاذاة العناصر بوسط الصفحة أفقيًا */
+  height: 100vh; /* تعيين ارتفاع العناصر ليملأ الشاشة بالكامل */
+  position: relative; /* لضمان توجيه العناصر الفرعية بالنسبة للجسم */
+  font-family: "Rakkas", serif; /* تعيين الخط الثانوي للنص */
+  font-weight: 400; /* تعيين وزن الخط */
+  font-style: normal; /* إزالة التنسيق */
 }
 
 #counter-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
+  display: flex; /* تحويل العناصر إلى عرض مرن */
+  flex-direction: column; /* توجيه العناصر بشكل عمودي */
+  align-items: center; /* محاذاة العناصر بوسط الصفحة عموديًا */
+  justify-content: center; /* محاذاة العناصر بوسط الصفحة أفقيًا */
+  margin-bottom: 20px; /* إضافة هامش أسفل للعنصر */
 }
 
 #counter {
-  font-size: 48px;
-  margin: 80px 20px;
+  background-color: #d6ffa7; /* لون خلفية العداد */
+  width: 100px; /* عرض العداد */
+  height: 100px; /* ارتفاع العداد */
+  text-align: center; /* محاذاة النص في الوسط */
+  padding: 50px; /* التباعد الداخلي للعداد */
+  box-shadow: inset 10px 10px 20px #333; /* ظل داخلي للعداد لإضافة بعد وعمق */
+  border-radius: 50%; /* تدوير الحواف لجعل العداد دائريًا */
+  font-size: 48px; /* حجم الخط */
+  margin: 80px 20px; /* الهوامش لتحديد المسافة بين العداد وبقية العناصر */
 }
-
-
 
 
 .add {
-  padding: 10px;
-  border-radius: 50%;
-  font-size: 24px;
-  background-color: #5fae61;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  margin-bottom: 20px;
+  padding: 10px; /* تعيين هامش الداخلي للزر */
+  border-radius: 50%; /* تعيين شكل الحواف للزر */
+  font-size: 24px; /* تعيين حجم الخط */
+  background-color: #5fae61; /* تعيين لون خلفية الزر */
+  color: white; /* تعيين لون النص */
+  border: none; /* إزالة حدود الزر */
+  cursor: pointer; /* تحويل المؤشر إلى علامة اليد عند التحويم */
+  transition: background-color 0.3s; /* تعيين تأثير الانتقال على لون خلفية الزر */
+  margin-bottom: 20px; /* إضافة هامش أسفل للزر */
 }
 .add:hover {
-  background-color: #45a049;
+  background-color: #45a049; /* تعيين لون خلفية الزر عند التحويم */
 }
 
 .reset {
-  padding: 10px;
-  border-radius: 50px;
-  font-size: 24px;
-  background-color:#5f9dae;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  padding: 10px; /* تعيين هامش الداخلي للزر */
+  border-radius: 50px; /* تعيين شكل الحواف للزر */
+  font-size: 24px; /* تعيين حجم الخط */
+  background-color:#5f9dae; /* تعيين لون خلفية الزر */
+  color: white; /* تعيين لون النص */
+  border: none; /* إزالة حدود الزر */
+  cursor: pointer; /* تحويل المؤشر إلى علامة اليد عند التحويم */
+  transition: background-color 0.3s; /* تعيين تأثير الانتقال على لون خلفية الزر */
 }
 .reset:hover {
-  background-color: #4582a0;
+  background-color: #4582a0; /* تعيين لون خلفية الزر عند التحويم */
 }
 
 #pop-up {
-  display: none;
-  position: absolute; /* Change to absolute positioning */
-  top: 10%; /* Adjusted top position */
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ); /* Semi-transparent white background */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
-  animation: pop-up 0.5s ease;
+  display: none; /* إخفاء العنصر بشكل افتراضي */
+  position: absolute; /* تعيين الموضع المطلق للعنصر */
+  top: 10%; /* تعيين الموضع العلوي للعنصر */
+  background-color: rgba(255, 255, 255, 0.8); /* تعيين لون خلفية العنصر مع شفافية */
+  padding: 20px; /* تعيين هامش داخلي للعنصر */
+  border-radius: 10px; /* تعيين شكل الحواف للعنصر */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* إضافة ظل للعنصر للعمق */
+  animation: pop-up 0.5s ease; /* تطبيق الرسوم المتحركة للعنصر */
 }
 
 @keyframes pop-up {
   0% {
-    transform: translateY(-100%) scaleY(0);
-    opacity: 0;
+    transform: translateY(-100%) scaleY(0); /* تحديد تحريك العنصر من الأعلى إلى الأسفل مع تحجيم عمودي */
+    opacity: 0; /* إخفاء العنصر */
   }
   50% {
-    transform: translateY(-50%) scaleY(1.1);
-    opacity: 1;
+    transform: translateY(-50%) scaleY(1.1); /* تحديد تحريك العنصر إلى الأسفل بنسبة محددة مع تحجيم عمودي */
+    opacity: 1; /* إظهار العنصر */
   }
   100% {
-    transform: translateY(0) scaleY(1);
-    opacity: 1;
+    transform: translateY(0) scaleY(1); /* تحديد تحريك العنصر إلى الأسفل مع تحجيم عمودي */
+    opacity: 1; /* إظهار العنصر */
   }
 }
