@@ -1,4 +1,3 @@
-
 let count = 0;
 const counterElement = document.getElementById("counter");
 const popUpElement = document.getElementById("pop-up");
@@ -29,7 +28,7 @@ function showPopUp() {
   popUpElement.style.animation = null;
 
   // Display pop-up with updated count
-  popUpElement.textContent = `Good job (${count})`;
+  popUpElement.textContent = `اللهم صل وسلم وبارك على سيدنا محمد (${count})`;
   popUpElement.style.display = "block";
 
   // Hide pop-up after 1 second

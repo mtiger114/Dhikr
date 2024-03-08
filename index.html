@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- تعيين ترميز الصفحة -->
     <meta charset="UTF-8" />
+    <!-- تحديد تناسب الشاشة للصفحة -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- عنوان الصفحة -ذكر -->
     <title>Dhikr</title>
-    <link rel="stylesheet" href="./css.css">
+    <!-- خطوط جوجل -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rakkas&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ربط ملف ال css -->
+    <link rel="stylesheet" href="./css.css" />
   </head>
   <body>
     <div id="counter-container">
-      <button onclick="increment()">+</button>
       <h1 id="counter">0</h1>
-      <button onclick="reset()">Reset</button>
+      <!-- عنصر لعرض العداد -->
+      <button class="add" onclick="increment()">🤲</button>
+      <!-- زر لزيادة العداد مع وظيفة تنفيذها عند النقر -->
+      <button class="reset" onclick="reset()">اعادة</button>
+      <!-- زر لمحو العداد مع وظيفة تنفيذها عند النقر -->
+      <p id="pop-up">اللهم صل وسلم وبارك على سيدنا محمد</p>
+      <!-- عبارة دعاء ما بعد النقر -->
     </div>
-    <p id="pop-up">Good job!</p>
+    <!-- استدعاء وربط ملف js -->
     <script src="./js.js"></script>
   </body>
 </html>
