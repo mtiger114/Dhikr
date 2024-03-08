@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Counter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        position: relative; /* To make sure pop-up is positioned relative to the body */
+      }
+
+      #counter-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      #counter {
+        font-size: 48px;
+        margin: 0 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 24px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      #pop-up {
+        display: none;
+        position: absolute; /* Change to absolute positioning */
+        top: 10%; /* Adjusted top position */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.8
+        ); /* Semi-transparent white background */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+        animation: pop-up 0.5s ease;
+      }
+
+      @keyframes pop-up {
+        0% {
+          transform: translateY(-100%) scaleY(0);
+          opacity: 0;
+        }
+        50% {
+          transform: translateY(-50%) scaleY(1.1);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(0) scaleY(1);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="counter-container">
+      <button onclick="increment()">+</button>
+      <h1 id="counter">0</h1>
+      <button onclick="reset()">Reset</button>
+    </div>
+    <!-- Pop-up element -->
+    <p id="pop-up">Good job!</p>
+
+    <script>
+      let count = 0;
+      const counterElement = document.getElementById("counter");
+      const popUpElement = document.getElementById("pop-up");
+      let popUpTimeout;
+
+      function increment() {
+        count++;
+        updateCounter();
+        // Clear previous timeout to prevent multiple pop-ups
+        clearTimeout(popUpTimeout);
+        // Show pop-up
+        showPopUp();
+      }
+
+      function reset() {
+        count = 0;
+        updateCounter();
+      }
+
+      function updateCounter() {
+        counterElement.textContent = count;
+      }
+
+      function showPopUp() {
+        // Reset animation
+        popUpElement.style.animation = "none";
+        void popUpElement.offsetWidth; // Trigger reflow
+        popUpElement.style.animation = null;
+
+        // Display pop-up with updated count
+        popUpElement.textContent = `Good job (${count})`;
+        popUpElement.style.display = "block";
+
+        // Hide pop-up after 1 second
+        popUpTimeout = setTimeout(() => {
+          popUpElement.style.display = "none";
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
